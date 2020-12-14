@@ -1,4 +1,4 @@
-package codeup;
+package HelloWorld.Jeongho;
 import java.util.Scanner;
 
 public class codeup_java_1018 {

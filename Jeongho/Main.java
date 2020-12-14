@@ -1,4 +1,4 @@
-package codeup;
+package HelloWorld.Jeongho;
 
 public class Main {
 
