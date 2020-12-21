@@ -9,5 +9,6 @@ public class codeup_java_1041 {
         int alpha =(int)a +1;
         char calpha = (char) alpha;
         System.out.println(calpha);
+        System.out.println(alpha);
     }
 }

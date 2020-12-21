@@ -1,8 +1,7 @@
-package Jeongho;
+package HelloWorld.Jeongho;
 
 import java.util.Scanner;
 
-import static com.sun.tools.doclint.Entity.or;
 
 public class codeup_java_1070 {
     public static void main(String[] args) {

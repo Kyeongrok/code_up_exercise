@@ -1,4 +1,4 @@
-package Jeongho;
+package HelloWorld.Jeongho;
 
 import java.util.Scanner;
 
