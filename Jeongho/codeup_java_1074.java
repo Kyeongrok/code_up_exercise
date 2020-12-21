@@ -11,6 +11,6 @@ public class codeup_java_1074 {
             System.out.println(a);
             a--;
         }
-        sc.close();
+
     }
 }

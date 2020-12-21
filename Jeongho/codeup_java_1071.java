@@ -13,6 +13,6 @@ public class codeup_java_1071 {
             }
 
         }
-        sc.close();
+
     }
 }

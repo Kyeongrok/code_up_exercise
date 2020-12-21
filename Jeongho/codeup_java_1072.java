@@ -16,6 +16,6 @@ public class codeup_java_1072 {
         for (int k = 0; k < arr.length; k++) {
             System.out.println(arr[k]);
         }
-        sc.close();
+
     }
 }

@@ -13,6 +13,6 @@ public class codeup_java_1076 {
             System.out.println(calpha);
             alpha--;
         }
-        sc.close();
+
     }
 }
