@@ -11,9 +11,6 @@ interface Stack{
 }
 public class ArrayStack implements Stack {
     private int top;
-
-
-
     private int stackSize;
     private char stackArr[];
 
@@ -41,7 +38,6 @@ public class ArrayStack implements Stack {
             stackArr[i] = temp[i];
         }
     }
-
     public void push(char item) {
         if (isFull()) {
             System.out.println("Stack is full!");
@@ -49,9 +45,7 @@ public class ArrayStack implements Stack {
         }
         stackArr[++top] = item;//스택 포인터가 가르키는 인덱스에 추가
         System.out.println("Inserted Item :" + item);
-
     }
-
 
     public char pop() {
         if (isEmpty()) {
@@ -62,8 +56,6 @@ public class ArrayStack implements Stack {
             return stackArr[--top];
         }
     }
-
-
     public char peek() {
         if (isEmpty()) {
             System.out.println("Peeking fail! Stack is empty!");
@@ -73,8 +65,6 @@ public class ArrayStack implements Stack {
             return stackArr[top];
         }
     }
-
-
     public void clear() {
         if (isEmpty()) {
             System.out.println("Stack is  alreadt mpty");
@@ -84,7 +74,6 @@ public class ArrayStack implements Stack {
             System.out.println("Stack is clear!");
         }
     }
-
     public void printStack() {
         if (isEmpty()) {
             System.out.println("Stack is Empty!");
@@ -97,21 +86,24 @@ public class ArrayStack implements Stack {
             System.out.println(stackArr.length);
         }
     }
-
+    public void reverse() {
+        System.out.print("Reverse Elements :");
+        for(int i = top; i>=0; i--) {
+            System.out.print(stackArr[i]);
+        }
+    }
     public static void main(String[] args) {
         int stackSize = 5 ;
         ArrayStack arrayStack = new ArrayStack(stackSize);
 
         arrayStack.push('A');
-        arrayStack.printStack();
         arrayStack.push('B');
+        arrayStack.push('C');
+        arrayStack.push('D');
+        arrayStack.push('E');
+        arrayStack.push('F');
         arrayStack.printStack();
-        arrayStack.push('c');
-        arrayStack.push('d');
-        arrayStack.push('e');
-        arrayStack.push('f');
-        arrayStack.printStack();
-
+        arrayStack.reverse();
 //        arrayStack.clear();
 //        arrayStack.printStack();
     }
