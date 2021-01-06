@@ -11,9 +11,6 @@ interface Stack{
 }
 public class ArrayStack implements Stack {
     private int top;
-
-
-
     private int stackSize;
     private char stackArr[];
 
@@ -97,20 +94,40 @@ public class ArrayStack implements Stack {
             System.out.println(stackArr.length);
         }
     }
-
+//    public char pop() {
+//        if (isEmpty()) {
+//            System.out.println("Deleting fail! Stack is empty");
+//            return 0;
+//        } else {
+//            System.out.println("Deleted Item :" + stackArr[top]);
+//            return stackArr[--top];
+//          }
+//    }
+    public void reverse() {
+        if (isEmpty()) {
+            System.out.println("Reverse fail! Stack is empty");
+        } else {
+            for (int i = stackArr.length-1; i < stackArr.length; --i) {
+                System.out.print(stackArr[i]);
+                System.out.println(stackArr[i--]);
+            }
+        }
+    }
     public static void main(String[] args) {
         int stackSize = 5 ;
         ArrayStack arrayStack = new ArrayStack(stackSize);
 
         arrayStack.push('A');
-        arrayStack.printStack();
+//        arrayStack.printStack();
         arrayStack.push('B');
+//        arrayStack.printStack();
+        arrayStack.push('C');
+        arrayStack.push('D');
+        arrayStack.push('E');
+        arrayStack.push('F');
+        arrayStack.reverse();
         arrayStack.printStack();
-        arrayStack.push('c');
-        arrayStack.push('d');
-        arrayStack.push('e');
-        arrayStack.push('f');
-        arrayStack.printStack();
+//        arrayStack.peek();
 
 //        arrayStack.clear();
 //        arrayStack.printStack();
