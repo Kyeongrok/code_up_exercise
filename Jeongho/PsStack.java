@@ -7,15 +7,15 @@ public class PsStack {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
-        Stack<Character> stack = new java.util.Stack<Character>();
-        while(num-- >0) {
+        Stack<Character> stack = new Stack<Character>();
+        while(num-- >=0) {
             boolean bol = true;
             String str = sc.nextLine();
             for(int i= 0; i<str.length(); i++) {
-                char temp = str.charAt(i);
-                if (temp == '(') {
+                char temp = str.charAt(i);//임시저장변수
+                if (temp == '(') {// '('일땐 푸쉬
                     stack.push(temp);
-                } else if (temp == ')') {
+                } else if (temp == ')') {// ')'일땐 팝
                     if (!stack.isEmpty()) {
                         stack.pop();
                     } else {
