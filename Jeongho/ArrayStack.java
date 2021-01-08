@@ -91,6 +91,7 @@ public class ArrayStack implements Stack {
         for(int i = top; i>=0; i--) {
             System.out.print(stackArr[i]);
         }
+        System.out.println();
     }
     public static void main(String[] args) {
         int stackSize = 5 ;
@@ -104,6 +105,7 @@ public class ArrayStack implements Stack {
         arrayStack.push('F');
         arrayStack.printStack();
         arrayStack.reverse();
+        arrayStack.pop();
 //        arrayStack.clear();
 //        arrayStack.printStack();
     }
