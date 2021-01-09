@@ -17,7 +17,6 @@ class Solution {
         for(int i = 0; i<numbers.length; i++) {//list에 arr더한값들 넣기
             for (int j = i+1; j < numbers.length; j++) {
                 list.add(numbers[i]+numbers[j]);
-              System.out.print(list.get(i)+" ");
             }
         }
         System.out.println();//중복 제거
@@ -27,11 +26,16 @@ class Solution {
                     list.remove(j);
                 }
             }
-        }//오름차순 정렬, answer에 넣을수 있게 형변환
-
-            int[] answer = {};
+        }//오름차순 정렬
+        Collections.sort(list);
+        //answer에 넣을수 있게 형변환
+        int[] answer = new int[list.size()];
+        for(int i = 0; i<answer.length;i++){
+            answer[i]= list.get(i);
+            System.out.print(answer[i]+" ");
+        }
+            //int[] answer = {};
             return answer;
-
     }
 }
 public class Programmers1_01 {
