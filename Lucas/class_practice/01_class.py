@@ -1,5 +1,5 @@
 class Cat:
-    def __init__(self,age,weight,height,color,first_name):
+    def __init__(self,age,weight,height,color,first_name):                 999g       b          m     
         self.age = age
         self.weight = weight
         self.height = height
