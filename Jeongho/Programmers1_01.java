@@ -20,7 +20,7 @@ class Solution {
                     bol2 = false;
                     break;
                 }
-            }
+               }
         }
         for (int i = 0; i < numbers.length; i++) {//list에 [i]+[i+1] 넣기
             for (int j = i + 1; j < numbers.length; j++) {
