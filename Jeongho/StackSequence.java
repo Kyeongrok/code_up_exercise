@@ -39,13 +39,13 @@ public class StackSequence {
                 }
             }else{//현재 숫자가 수열의 요소보다 클때 ->이미 스택안에 있으니까
                 int n = stack.pop();
-                System.out.println(n);
+//                System.out.println(n);
                 //이게 계속 진행되어야하고
                 if(n>arr[i]){// 핵심 원리: 스택의 가장 위의 수(n)가 만들어야되는 수(arr[i])보다 크면 n이 빠져버림 -> 다음에 그 요소가 나오면 수열을 못만듬
                     System.out.println("NO");//{5, 1, 2, 5, 3, 4}
                     return 0;
                 }else{//이건 마이너스를 진행하라는 소리
-                    System.out.print("-\n");
+                    result[i]=n;
                 }
             }
                 System.out.print(result[i] + " ");
@@ -53,7 +53,6 @@ public class StackSequence {
 
         sc.close();
         System.out.println();
-        System.out.println(stack.size());
         return 0;
     }
     public static void main(String[] args) {
