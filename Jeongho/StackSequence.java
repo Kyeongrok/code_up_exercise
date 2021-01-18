@@ -1,8 +1,6 @@
 package HelloWorld.Jeongho;
-
 import java.util.Scanner;
 import java.util.Stack;
-
 public class StackSequence {
     public static int sequence(int input){
 
