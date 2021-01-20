@@ -1,3 +1,5 @@
+package HelloWorld.Jeongho;
+
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -14,10 +16,17 @@ public class StackSequence2 {
         return arr;
     }
     public static boolean sequence(int[] arr){
+
         // arr에 일때
         Stack<Integer> stack = new Stack<Integer>();
         int num = 1;
         for(int i=0; i<arr.length; i++){
+            //arr에서 앞에것보다 뒤에것이 더 크거나 중복이면 안되는 조건식을 만들자
+            for(int a = 1; a < arr.length-1; a++){
+                if(arr[i+1]<=arr[a]){// {5, 1, 2, 6, 3, 4, 5}
+
+                }
+            }
             if(arr[i] > num){
                 // 4 > 1
                 // 4 > 2
@@ -38,7 +47,6 @@ public class StackSequence2 {
                     }
                 }
             }
-            //arr에서 앞에것보다 뒤에것이 더 크거나 중복이면 안되는 조건식을 만들자
 //           else if(arr[i] == num){//{4 5 3 2 1}
 //                stack.push(num);
 //                stack.pop();
