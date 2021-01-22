@@ -1,8 +1,8 @@
+package HelloWorld.Jeongho;
 import java.util.Scanner;
 import java.util.Stack;
 public class Editor {
     class Edit{
-        public static
     }
     public static void main(String[] args) {
         //왼쪽 오른쪽 스택 만들고, 스위치로 L, D, B, P$ 만들고
