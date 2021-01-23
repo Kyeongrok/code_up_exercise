@@ -5,13 +5,10 @@ import java.util.*;
 import java.util.List;
 
 
-class Solution {
+class Solution1 {
     public int[] solution(int[] numbers) {
         LinkedList<Integer> list = new LinkedList<Integer>();
-//        for(int i=1; i<numbers.length;i++) {//더한값을 넣어줄 배열의 길이
-//            a+=i;
-//        }
-//        int[] arr = new int[a];//arr의 크기
+//       int[] arr = new int[a];//arr의 크기
         boolean bol1 = numbers.length >= 2 && numbers.length <= 100;
         boolean bol2 = true;
         if(!bol1) {
@@ -60,7 +57,7 @@ public class Programmers1_01 {
             System.out.print(j[i]+" ");
         }
         System.out.println();
-        Solution sol = new Solution();
+        Solution1 sol = new Solution1();
         sol.solution(j);
     }
 }

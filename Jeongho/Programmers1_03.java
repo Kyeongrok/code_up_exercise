@@ -1,7 +1,9 @@
+package HelloWorld.Jeongho;
+
 import java.util.LinkedList;
 import java.util.Scanner;
 
-class Solution {
+class Solution3 {
     public int solution(int n, int[] lost, int[] reserve) {
         /*greedy알고리즘: 지역적인 조건의 최적해를 매번 고르다보면 전역적인 조건에서도 최적의해를 구할수 있다고 생각한 알고리즘 실제는 그렇지 않으므로 적용할수있는 상황에서만 적용가능
         n=전체학생수 lost 잃어버린 학생의 배열 , reserve 여벌이 있는 학생의 배열
@@ -63,7 +65,7 @@ public class Programmers1_03 {
         int n = 5;
         int[] lost = {2, 4};//서로 겹칠 가능성이 있음
         int[] reserve ={1, 3, 5};
-        Solution sol = new Solution();
+        Solution3 sol = new Solution3();
         sol.solution(n,lost, reserve);
     }
 }

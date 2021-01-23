@@ -1,3 +1,5 @@
+package HelloWorld.Jeongho;
+
 import java.util.Scanner;
 
 public class Programmers1_02 {
