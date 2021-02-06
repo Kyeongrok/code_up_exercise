@@ -1,7 +1,44 @@
 package HelloWorld.Jeongho;
 
 import java.util.*;
+class Solution15_1{
+    public String solution(String new_id){
+        //정규표현식 훨씬 편하다
+        String answer = new_id;
 
+        //1st
+        answer = answer.toLowerCase();
+        //2nd                               숫자,소문자 -_. 제외하고
+        answer = answer.replaceAll("[^0-9a-z-_.]", "");
+        //3rd                           . 2개이상
+        answer =answer.replaceAll("[.]{2,}", ".");
+        //4th
+        if(answer.startsWith(".")){
+            answer = answer.substring(1, answer.length());
+        }else if(answer.endsWith(".")){
+            answer = answer.substring(0, answer.length()-1);
+        }
+        //5th
+        if(answer.length() == 0){
+            answer +="a";
+        }
+        //6th 길이가 15이상인건 다 지우기
+        if(answer.length() >= 16){
+            answer= answer.substring(0, 15);
+        }
+        if(answer.endsWith(".")){
+            answer = answer.substring(0,answer.length()-1);
+        }
+        //7th       문자열 길이가 2이하면 길이가 3될때가지 마지막 단어 더하기
+        if(answer.length() <=2){
+            while(answer.length()<3){
+                answer += answer.charAt(answer.length() -1);
+            }
+        }
+        System.out.println(answer);
+        return answer;
+    }
+}
 class Solution15 {
     public String solution(String new_id) {
         //배열에 넣고 하나씩 해보자 linkedlist로
@@ -18,24 +55,34 @@ class Solution15 {
             }//1st step
         }
         for(int i = 0; i< list.size(); i++) {// 같이 하지않는 이유 => 같이하게 되면 대문자로 바꾸기전에 인덱스가 바뀌면서 제대로 훑고 지나가지 못함
-            if (list.get(i).charAt(0) >= 33 && list.get(i).charAt(0) <= 44
-                    || list.get(i).charAt(0) == 47
-                    || list.get(i).charAt(0) >= 58 && list.get(i).charAt(0) <= 64
-                    || list.get(i).charAt(0) >= 91 && list.get(i).charAt(0) <= 94
-                    || list.get(i).charAt(0) >= 123 && list.get(i).charAt(0) <= 126) {
-                int d = i;
-                list.remove(i);
-                if(d < list.size()) {
-                    if (list.get(i).charAt(0) >= 33 && list.get(i).charAt(0) <= 44
-                            || list.get(i).charAt(0) == 47
-                            || list.get(i).charAt(0) >= 58 && list.get(i).charAt(0) <= 64
-                            || list.get(i).charAt(0) >= 91 && list.get(i).charAt(0) <= 94
-                            || list.get(i).charAt(0) >= 123 && list.get(i).charAt(0) <= 126) {
-                        list.remove(d);
-                    }
+            if(i < list.size()) {
+                while (list.get(i).charAt(0) >= 33 && list.get(i).charAt(0) <= 44
+                        || list.get(i).charAt(0) == 47
+                        || list.get(i).charAt(0) >= 58 && list.get(i).charAt(0) <= 64
+                        || list.get(i).charAt(0) >= 91 && list.get(i).charAt(0) <= 94
+                        || list.get(i).charAt(0) >= 123 && list.get(i).charAt(0) <= 126
+                        && list.size() >= 1) {
+                    list.remove(i);
                 }
+            }
+//            if (list.get(i).charAt(0) >= 33 && list.get(i).charAt(0) <= 44
+//                    || list.get(i).charAt(0) == 47
+//                    || list.get(i).charAt(0) >= 58 && list.get(i).charAt(0) <= 64
+//                    || list.get(i).charAt(0) >= 91 && list.get(i).charAt(0) <= 94
+//                    || list.get(i).charAt(0) >= 123 && list.get(i).charAt(0) <= 126) {
+//                int d = 0;
+//                list.remove(i);
+//                while(d < i-1) {
+//                    if (list.get(i).charAt(0) >= 33 && list.get(i).charAt(0) <= 44
+//                            || list.get(i).charAt(0) == 47
+//                            || list.get(i).charAt(0) >= 58 && list.get(i).charAt(0) <= 64
+//                            || list.get(i).charAt(0) >= 91 && list.get(i).charAt(0) <= 94
+//                            || list.get(i).charAt(0) >= 123 && list.get(i).charAt(0) <= 126) {
+//                        list.remove(d);
+//                    }
+//                    d++;
+//                }
             }//2nd step
-        }
         for(int i =0; i < list.size(); i++){
             if(list.get(i).charAt(0) == 46 ){
                 int a  = i +1;
@@ -72,7 +119,9 @@ class Solution15 {
             }
         }//7th step
        StringBuffer res = new StringBuffer();
-       res.append(list);
+        for(int i = 0; i <list.size(); i++) {
+            res.append(list.get(i));
+        }
         String answer = res.toString();
         System.out.println(answer);
         return answer;
@@ -80,8 +129,8 @@ class Solution15 {
 }
 public class Programmers1_15 {
     public static void main(String[] args) {
-        Solution15 sol = new Solution15();
-        String id = "abcdefghijklmn.p";
+        Solution15_1 sol = new Solution15_1();
+        String id = ".1.";
         sol.solution(id);
     }
 }
