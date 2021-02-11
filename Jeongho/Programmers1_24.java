@@ -1,11 +1,14 @@
+package HelloWorld.Jeongho;
 
 class Solution24 {
-    private int cal(int l, int r, int n) {
+    private int cal(int l, int r, int n) {//if 타면 else if 안타는구나..
         if(n == 0){
             n = 11;
-        }else if(l == 0){
+        }
+        if(l == 0){
             l = 11;
-        }else if(r == 0){
+        }
+        if(r == 0){
             r = 11;
         }
         int lx = (l - 1) / 3;
@@ -59,7 +62,7 @@ class Solution24 {
                     lid = numbers[i];
                     answer += "L";
                     System.out.println(lid +" "+ "L");
-                } else if (cal(lid, rid, numbers[i]) == -1) {
+                } else if (cal(lid, rid, numbers[i]) == -1) { //길이가 같을때
                     if (hand.equals("left")) {
                         lid = numbers[i];
                         answer += "L";
