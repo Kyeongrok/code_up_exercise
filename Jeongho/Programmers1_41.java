@@ -1,4 +1,4 @@
-package HelloWorld.Jeongho;
+//package HelloWorld.Jeongho;
 class Solution41 {
     public String[] solution(int n, int[] arr1, int[] arr2) {
         /*
@@ -38,7 +38,6 @@ class Solution41 {
                 d = b;
             }
             ans2[i] = d;
-            String.
         }
 //  하나씩 읽어서 1이면 바꿔주자
         for(int i = 0; i< n; i++){
