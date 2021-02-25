@@ -1,50 +1,50 @@
-package HelloWorld.Jeongho;
+//package HelloWorld.Jeongho;
 
-import java.util.Stack;
+import java.util.*;
 
 class Solution_2 {
     public int[] solution(int[] progresses, int[] speeds) {
         /*
-        첫번째 배열이 완료될때까지 진행
-        각각 배열이 100이 되면 더하는 걸 멈춤 그리고 인덱스 넣고, 넣은 인덱스엔 -1
-        첫번째가 100이 되면 스택에 넣은것들 다빼고...
-        두번째부터 반복
-        차례대로 진행되어야함
+       100에서 progresses들 빼주고 남은거 speeds로 나누면 얼마나 걸리는지 나오고
+       그걸  days배열에 다 넣는다
+       days배열을 처음부터 검사한다
+       앞에배열이 뒤에 배열보다 더 크면 1씩 더하고
+       작으면 거기서 answer에 index넣어주고 index의 숫자부터 다시 검사
          */
-        Stack<Integer> stk = new Stack<>();
-        int[] answer = {};
-        for(int t = 0; t < progresses.length; t++) {
-            while (progresses[t] <= 100) { // 진도 나아가는 과정
-                for (int i = 0; i < progresses.length; i++) {
-                    if (progresses[i] < 100 && progresses[i] != -1) {
-                        progresses[i] += speeds[i];
-                    }
-                    if (progresses[i] >= 100 ) { // 한번 100이 되고 스택에 들어간것들도 중복으로 들어갈수 있음 이미 100이 된것은 넘어가야됨
-                        stk.push(i);
-                        progresses[i] =1;
-                    }
-                }
-            }
-            for (int i = 0; i < progresses.length; i++) {//여기서 하나씩 검사하면서 이제 answer에다 넣어주는건데
-                if (progresses[i] > 100) {
-                    int id = 0;
-                    while (!stk.empty()) {// 바로 다음 인덱스가 있는지 없는지 확인해야함 차례대로니까
-                        stk.pop();
-                        id++;
-                    }
-                }
+        int[] days = new int[progresses.length];
+        for(int i = 0; i < progresses.length; i++){
+            if ((100 - progresses[i]) % speeds[i] == 0) {
+                days[i] = (100-progresses[i]) / speeds[i];
+            }else{
+                days[i] = ((100- progresses[i]) / speeds[i]) + 1;
             }
         }
-        //두개의 과정이 한 싸이클안에서 이뤄져야함
-
+        int j  = 0;
+        LinkedList<Integer> list = new LinkedList<>();
+        for(int i = 0; i< days.length; i++){
+            int cnt = 0;
+            for(j = i +1; j < days.length; j++){
+                if(days[i] < days[j]){
+                    i = j -1;
+                    break;
+                }else cnt++;
+            }
+            list.add(cnt + 1);
+            if(j == days.length) break;
+        }
+        int[] answer = new int[list.size()];
+        for(int i = 0; i < answer.length; i++){
+            answer[i] = list.get(i);
+            System.out.println(answer[i]);
+        }
         return answer;
     }
 }
 public class Programmers2_02 {
     public static void main(String[] args) {
         Solution_2 sol = new Solution_2();
-        int[] progresses = {93, 30, 55};
-        int[] speeds = {1, 30, 5};
+        int[] progresses = {95, 90, 99, 99, 80, 99};
+        int[] speeds = {1, 1, 1, 1, 1, 1};
         sol.solution(progresses, speeds);
     }
 }
